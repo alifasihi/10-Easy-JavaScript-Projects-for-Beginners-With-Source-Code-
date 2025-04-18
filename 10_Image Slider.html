@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Image Slider</title></head>
+<body>
+<img id="slide" width="300">
+<button onclick="prev()">Prev</button>
+<button onclick="next()">Next</button>
+<script>
+const imgs = ["img1.jpeg","img2.jpg","img3.jpg"];
+let i = 0;
+document.getElementById("slide").src = imgs[i];
+function next() {
+  i = (i + 1) % imgs.length;
+  document.getElementById("slide").src = imgs[i];
+}
+function prev() {
+  i = (i - 1 + imgs.length) % imgs.length;
+  document.getElementById("slide").src = imgs[i];
+}
+</script>
+</body>
+</html>

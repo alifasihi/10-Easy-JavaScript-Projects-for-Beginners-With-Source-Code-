@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Calculator</title></head>
+<body>
+<input id="n1" type="number">
+<input id="n2" type="number">
+<select id="op">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<button onclick="calculate()">=</button>
+<span id="result"></span>
+<script>
+function calculate() {
+  const a = +document.getElementById("n1").value;
+  const b = +document.getElementById("n2").value;
+  const op = document.getElementById("op").value;
+  document.getElementById("result").textContent = eval(`${a} ${op} ${b}`);
+}
+</script>
+</body>
+</html>

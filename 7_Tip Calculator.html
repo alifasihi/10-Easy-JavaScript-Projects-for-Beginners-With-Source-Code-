@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tip Calculator</title></head>
+<body>
+<input id="bill" type="number" placeholder="Bill Amount">
+<input id="people" type="number" placeholder="No. of People">
+<input id="tip" type="number" placeholder="Tip %" />
+<button onclick="calculateTip()">Calculate</button>
+<div id="output"></div>
+<script>
+function calculateTip() {
+  const bill = +document.getElementById("bill").value;
+  const people = +document.getElementById("people").value;
+  const tipPercent = +document.getElementById("tip").value;
+  const totalTip = bill * (tipPercent / 100);
+  const each = (bill + totalTip) / people;
+  document.getElementById("output").textContent = `Each pays: $${each.toFixed(2)}`;
+}
+</script>
+</body>
+</html>
